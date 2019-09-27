@@ -14,9 +14,12 @@ for path in ${paths}; do
 
 	# If file not versioned
 	if [ ! -f ${path} ]; then
+	  echo "${path} not found..."
+
 		# If file found in external directory
 		if [ -f ${archive_folder}/${file} ]; then
 		    mkdir -p ${folder}
+		    echo "Copying ${archive_folder}/${file} to ${folder}"
 		    cp ${archive_folder}/${file} ${folder}
 		fi
 	fi
